@@ -194,7 +194,7 @@ Proof.
         dependent destruction He. cbn. constructor; eauto.
         intros. inversion H1. ddestruction.
         apply H0 in H1. pclearbot. unfold id. right. eapply CIH.
-        red in x1. cbn in x1. inversion x1. ddestruction.
+        match goal with X : eqit_ _ _ _ _ _ _ _ |- _ => red in X; cbn in X; inversion X end. ddestruction.
         specialize (H0 tt a (rar _ _ _)).
         specialize (REL0 a). pclearbot.
         change (paco2 ?x ?y ?t ?u) with (eq_itree eq t u) in REL0.
